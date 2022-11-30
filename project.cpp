@@ -380,6 +380,7 @@ int main()
          B.payment();
        break;
     case 6:
+        cout<<"\n\n------THANKS FOR YOUR VISIT-----\n\n";
         exit(0);
         break;    
     default:
