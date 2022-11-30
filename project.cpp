@@ -233,6 +233,7 @@ class Event
     {
        int func;
        string area,hall,garden,pool;
+       cout<<"\n\n\n-----WELCOME TO EVENT BOOKING SECTION-----\n\n\n";
        cout<<"What kind of event do you want us to organise?"<<endl;
        cout<<"1.Weddings and Receptions."<<endl;
        cout<<"2.Themed Garden Parties."<<endl;
@@ -295,7 +296,7 @@ class Bill
     void payment()
     {
         int select;
-        int pay,card,pin;
+        long int pay,card,pin;
      cout<<"\n\n\n-----WELCOME TO BILL AND PAYMENT SECTION-----\n\n\n"<<endl;
      cout<<"Please select the mode of payment-"<<endl;
      cout<<"1.Scan QR code."<<endl;
@@ -330,26 +331,21 @@ class Bill
      cout<<"Select a valid mode of payment."<<endl;
         break;
      }
-
     }
 };
-int main()
+class All:public Hotel, public Food,public Room,public Housekeeping,public Event,public Bill
 {
+    public:
+    All()
+    {
     int choice;
-    Hotel H;
-    cout<<"\n\n\n"<<H.description;
-    cout<<"\nName of the Hotel: "<<H.name;
-    cout<<"\nAddress: "<<H.address; 
-    cout<<"\nPin code: "<<H.pin_code;
-    cout<<"\nContact us on: "<<H.contact_no;
-    cout<<"\nEmail: "<<H.email<<"\n\n\n"; 
+    cout<<"\n\n\n"<<description;
+    cout<<"\nName of the Hotel: "<<name;
+    cout<<"\nAddress: "<<address; 
+    cout<<"\nPin code: "<<pin_code;
+    cout<<"\nContact us on: "<<contact_no;
+    cout<<"\nEmail: "<<email<<"\n\n\n"; 
        
-    Food F;
-    Room R;
-    Housekeeping h;
-    Event E;
-    Bill B;
-    
    do
    {   
     cout<<"-----------MAIN MENU-----------"<<endl;  
@@ -364,23 +360,23 @@ int main()
     switch (choice)
     {
     case 1:
-        F.Home_Delivery();  
+        Home_Delivery();  
         break;
     case 2:
-         R.room_booking();
-         R.offers(); 
+        room_booking();
+        offers(); 
         break;
     case 3:
-        h.maintenance();
+        maintenance();
        break;
     case 4:
-        E.event_book();
+        event_book();
         break;   
     case 5:
-         B.payment();
+        payment();
        break;
     case 6:
-        cout<<"\n\n------THANKS FOR YOUR VISIT-----\n\n";
+    cout<<"\n\n------THANKS FOR YOUR VISIT-----\n\n";
         exit(0);
         break;    
     default:
@@ -389,6 +385,11 @@ int main()
     }
     } while (choice != 6);
     
-   
+    }
+};
+int main()
+{
+    
+   All A;
     return 0;
 }
