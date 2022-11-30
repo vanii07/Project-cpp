@@ -93,7 +93,7 @@ class Room:public Discounts
         cout<<"4.Deluxe Room.\t\t\t20,000 per night"<<endl;
         cout<<"5.Luxury Room.\t\t\t25,000 per night"<<endl;
         cout<<"6.Luxury Suite.\t\t\t27,000 per night"<<endl;
-        cout<<"7.Luxury Grande Suite.\t\t\t29,000 per night"<<endl;
+        cout<<"7.Luxury Grande Suite.\t\t29,000 per night"<<endl;
         cout<<"Enter your choice: "<<endl;
         cin>>type;
         switch (type)
