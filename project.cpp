@@ -62,7 +62,28 @@ void Home_Delivery()
    cin>>opt;
    if (opt == 'Y')
    {
-    cout<<"This is our menu.Select what do you wanna eat and tell us."<<endl;
+    cout<<"DISHES\t\t\t\tPRICE"<<endl;
+    cout<<"PIZZA"<<endl;
+    cout<<"1.Margherita Pizza\t\t99rs."<<endl;
+    cout<<"2.Quick Tomato Pizza\t\t159rs."<<endl;
+    cout<<"3.Four Cheese Pizza\t\t159rs."<<endl;
+    cout<<"4.Cheesy Vegetable Pizza\t179rs."<<endl;
+    cout<<"\n\nSANDWICH"<<endl;
+    cout<<"1.Cheese Sandwich\t\t85rs."<<endl;
+    cout<<"2.Mushroom Sandwich\t\t95rs."<<endl;
+    cout<<"3.Paneer Sandwich\t\t95rs."<<endl;
+    cout<<"4.Vegetable Sandwich\t\t85rs."<<endl;
+    cout<<"\n\nDESSERTS"<<endl;
+    cout<<"1.Rasgulla\t\t125rs.(500gm)"<<endl;
+    cout<<"2.Kaju Katli\t\t270rs.(500gm)"<<endl;
+    cout<<"3.Badam Halwa\t\t50rs.(500gm)"<<endl;
+    cout<<"4.Mango Halwa\t\t55rs.(500gm)"<<endl;
+    cout<<"\n\nSOFT DRINKS"<<endl;
+    cout<<"1.Fanta Can\t\t99rs."<<endl;
+    cout<<"2.Pepsi Can\t\t159rs."<<endl;
+    cout<<"3.Sprite Can\t\t159rs."<<endl;
+    cout<<"4.Coca Cola Can\t\t179rs."<<endl;
+    cout<<"\n\nThis is our menu.Select what do you wanna eat and tell us."<<endl;
     cin>>ord;
     cout<<"Address:"<<endl;
     cin>>pata;
@@ -189,6 +210,23 @@ class Room:public Discounts
         }
         
         
+    }
+    void Guest()
+    {
+        string naam,address;
+        long int indate,outdate,contact;
+        cout<<"\n\nPlease Enter your details."<<endl;
+        cout<<"Enter your full name: "<<endl;
+        cin>>naam;
+        cout<<"Enter your address: "<<endl;
+        cin>>address;
+        cout<<"Enter your date of check in: "<<endl;
+        cin>>indate;
+        cout<<"Enter your date of check out: "<<endl;
+        cin>>outdate;
+        cout<<"Enter your contact number: "<<endl;
+        cin>>contact;
+        cout<<"Thank You for giving us your details."<<endl;
     }
 
 };
@@ -364,6 +402,7 @@ class All:public Hotel, public Food,public Room,public Housekeeping,public Event
         break;
     case 2:
         room_booking();
+        Guest();
         offers(); 
         break;
     case 3:
