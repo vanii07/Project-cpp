@@ -18,6 +18,32 @@ class Hotel
         email = "hotelcosmos@gmail.com";
     }
 };
+class Employee{
+    public:
+    int i,n,id[50],salary[50];
+    string namee[50];
+    void getdetails()
+    {
+    cout<<"How many employees information you wanna insert?\n";
+    cin>>n;
+    for ( i = 0; i < n; i++)
+    {
+        cout<<"Employee Name: ";
+        cin>>namee[i];
+        cout<<"Employee ID: ";
+        cin>>id[i];
+        cout<<"Employee Salary: ";
+        cin>>salary[i];
+    }
+    for ( i = 0; i < n; i++)
+    {
+        cout<<"Name:"<<namee[i]<<endl;
+        cout<<"Salary:"<<salary[i]<<endl;
+        cout<<"ID:"<<id[i]<<endl;
+    }    
+    }
+};
+
 class Discounts
 {
     public:
@@ -48,12 +74,12 @@ class Discounts
             cout<<"Please enter an appropriate choice."<<endl;
         } 
      }   
-
 };
 class Food
-{public:
-void Home_Delivery()
 {
+ public:
+ void Home_Delivery()
+ {
    char opt;
    string ord;
    string pata;
@@ -89,14 +115,14 @@ void Home_Delivery()
     cin>>pata;
     cout<<"Your order is on the way."<<endl;
     }
-   else if(opt == 'N')
-   {
+    else if(opt == 'N')
+    {
     cout<<"Have a Great Day."<<endl;
-   }  
-   else
-   {
+    }  
+    else
+    {
     cout<<"Please Enter a Valid Character."<<endl;
-   }
+    }
 }
 };
 class Room:public Discounts
@@ -193,7 +219,6 @@ class Room:public Discounts
             cout<<"Please enter a valid choice."<<endl;
             break;
         }
-        
         cout<<"How do you want to make a payment?\nSelect 1 for online and 2 for offline."<<endl;  
         cin>>rupay;    
         if (rupay == 1)
@@ -207,30 +232,9 @@ class Room:public Discounts
         else
         {
             cout<<"Enter a valid number."<<endl;
-        }
-        
-        
+        } 
     }
-    void Guest()
-    {
-        string naam,address;
-        long int indate,outdate,contact;
-        cout<<"\n\nPlease Enter your details."<<endl;
-        cout<<"Enter your full name: "<<endl;
-        cin>>naam;
-        cout<<"Enter your address: "<<endl;
-        cin>>address;
-        cout<<"Enter your date of check in: "<<endl;
-        cin>>indate;
-        cout<<"Enter your date of check out: "<<endl;
-        cin>>outdate;
-        cout<<"Enter your contact number: "<<endl;
-        cin>>contact;
-        cout<<"Thank You for giving us your details."<<endl;
-    }
-
 };
-
 class Housekeeping
 {
     public:
@@ -262,7 +266,6 @@ class Housekeeping
             break;
         }
     }
-
 };
 class Event
 {
@@ -304,38 +307,62 @@ class Event
         cout<<"Visit us to review the pool area and confirm the booking."<<endl;  
         break;
      case 4:
-         cout<<"What do you prefer halls or garden area?"<<endl;
+        cout<<"What do you prefer halls or garden area?"<<endl;
         cin>>area;
         if (area == hall)
         {
-          cout<<"Visit us to review the hall and confirm the booking."<<endl;
+        cout<<"Visit us to review the hall and confirm the booking."<<endl;
         }
         else if (area == garden)
         {
-            cout<<"Visit us to review the garden area and confirm the booking."<<endl;
+        cout<<"Visit us to review the garden area and confirm the booking."<<endl;
         }
         else{
-            cout<<"Please enter valid option."<<endl;
+        cout<<"Please enter valid option."<<endl;
         }
         break;
      case 5:
         cout<<"Visit us to review the hall area and confirm the booking."<<endl;  
         break;
      default:
-       cout<<"Enter the correct choice."<<endl;
+        cout<<"Enter the correct choice."<<endl;
         break;
      }
-
     }
 };
-class Bill
+class Customer
+{
+    public: 
+    void info()
+    {
+      string naam[50],pata[50],password[50];
+      int i,n,phone[50],booking_id[50];
+      cout<<"How many guests are there?"<<endl;
+      cin>>n;
+      for ( i = 0; i < n; i++)
+      {
+        cout<<"Name: "<<endl;
+        cin>>naam[i];
+        cout<<"Address: "<<endl;
+        cin>>pata[i];
+        cout<<"Contact number: "<<endl;
+        cin>>phone[i];
+        cout<<"Booking id: "<<endl;
+        cin>>booking_id[i];
+        cout<<"Password: "<<endl;
+        cin>>password[i];  
+      }
+    }
+};
+class Bill:public Customer
 {
     public:
     void payment()
     {
-        int select;
-        long int pay,card,pin;
+    int select;
+    long long int pay,card,pin;
      cout<<"\n\n\n-----WELCOME TO BILL AND PAYMENT SECTION-----\n\n\n"<<endl;
+    
      cout<<"Please select the mode of payment-"<<endl;
      cout<<"1.Scan QR code."<<endl;
      cout<<"2.Credit card or Debit card."<<endl;
@@ -371,7 +398,7 @@ class Bill
      }
     }
 };
-class All:public Hotel, public Food,public Room,public Housekeeping,public Event,public Bill
+class All:public Hotel,public Employee, public Food,public Room,public Housekeeping,public Event,public Bill
 {
     public:
     All()
@@ -387,34 +414,38 @@ class All:public Hotel, public Food,public Room,public Housekeeping,public Event
    do
    {   
     cout<<"-----------MAIN MENU-----------"<<endl;  
-    cout<<"\n\n 1.Looking For Food?";
-    cout<<"\n 2.Room Bookings.";
-    cout<<"\n 3.Housekeeping.";
-    cout<<"\n 4.Event Booking.";
-    cout<<"\n 5.Bill and Payments.";
-    cout<<"\n 6.Exit.";
+    cout<<"\n\n 1.Employee details";
+    cout<<"\n 2.Looking For Food?";
+    cout<<"\n 3.Room Bookings.";
+    cout<<"\n 4.Housekeeping.";
+    cout<<"\n 5.Event Booking.";
+    cout<<"\n 6.Bill and Payments.";
+    cout<<"\n 7.Exit.";
     cout<<"\n Enter your choice: ";
     cin>>choice;
     switch (choice)
     {
     case 1:
-        Home_Delivery();  
+        getdetails();
         break;
     case 2:
-        room_booking();
-        Guest();
-        offers(); 
+        Home_Delivery();  
         break;
     case 3:
-        maintenance();
-       break;
+        room_booking();
+        offers(); 
+        break;
     case 4:
+        maintenance();
+        break;
+    case 5:
         event_book();
         break;   
-    case 5:
-        payment();
-       break;
     case 6:
+        info();    
+        payment();
+        break;
+    case 7:
     cout<<"\n\n------THANKS FOR YOUR VISIT-----\n\n";
         exit(0);
         break;    
@@ -423,7 +454,6 @@ class All:public Hotel, public Food,public Room,public Housekeeping,public Event
         break;
     }
     } while (choice != 6);
-    
     }
 };
 int main()
